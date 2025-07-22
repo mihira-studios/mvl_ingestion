@@ -1,4 +1,4 @@
 templates:
-  ingest_workspace: '{project_root}/to_mvl/{vendor}/{date}/{scene}/{scene_shot}/{resolution}'
-  egress_worksapce: '{project_root}/from_mvl/{vendor}/{date}/{scene}/{scene_shot}/{resolution}'
+  ingest_workspace: '{project_root}/vault/to_mvl/{vendor}/{date}/{scene}/{shot}/{resolution}'
+  egress_worksapce: '{project_root}/vault/from_mvl/{vendor}/{date}/{scene}/{shot}/{resolution}'
   

@@ -1,1 +1,1 @@
-python "%REZ_MVL_INGESTION_ROOT%\\python\\mvl_ingestion_tool\\ingest.py" %*
+python "%REZ_MVL_INGESTION_ROOT%\\python\\mvl_ingestion\\ingest.py" %*

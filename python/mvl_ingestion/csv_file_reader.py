@@ -1,8 +1,8 @@
-from mvl_core_pipeline.logger import Logger
-log = Logger(name = "mvl_ingestion_tool", repo_name="mvl_ingestion_tool", level=10).get_logger()
 
 import csv
-class CSVReader:
+import logging
+
+class MVLCSVReader:
 	"""
 	A class to read CSV files and create a dictionary where the first column
 	is the key and the remaining columns are the values (as a list).
@@ -42,10 +42,10 @@ class CSVReader:
 						self.data.append(row)
 			return self.data
 		except FileNotFoundError:
-			log.error(f"Error: File not found at '{self.file_path}'")
+			logging.info(f"Error: File not found at '{self.file_path}'")
 			return []
 		except Exception as e:
-			log.error(f"Error reading CSV file: {e}")
+			logging.info(f"Error reading CSV file: {e}")
 			return []
 
 	def get_data(self):
@@ -83,11 +83,11 @@ class CSVReader:
 		"""
 		mapping = {}
 		if not self.data:
-			log.warining("Warning: No data has been read from the CSV file.")
+			logging.info("Warning: No data has been read from the CSV file.")
 			return mapping
 
 		if key_column_index < 0 or (self.data and key_column_index >= len(self.data[0])):
-			log.error(f"Error: Key column index {key_column_index} is out of bounds.")
+			logging.info(f"Error: Key column index {key_column_index} is out of bounds.")
 			return mapping
 
 		start_row = 1 if skip_header and self.header else 0
@@ -118,16 +118,16 @@ class CSVReader:
 		"""
 		mapping = {}
 		if not self.data:
-			log.warning("Warning: No data has been read from the CSV file.")
+			logging.info("Warning: No data has been read from the CSV file.")
 			return mapping
 
 		if not self.header and skip_header:
-			log.error("Error: Header not read. Call read_csv() with skip_header=True first.")
+			logging.info("Error: Header not read. Call read_csv() with skip_header=True first.")
 			return mapping
 
 		try:
 			key_column_index = self.header.index(key_column_name)
 			mapping = self.create_dictionary_mapping(key_column_index=key_column_index, skip_header=True)
 		except ValueError:
-			log.error(f"Error: Key column '{key_column_name}' not found in the header.")
+			logging.info(f"Error: Key column '{key_column_name}' not found in the header.")
 		return mapping

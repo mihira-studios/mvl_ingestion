@@ -1,0 +1,26 @@
+template:
+  res:
+    - name: "2K_DCP"
+      resolution: [2048, 1080]
+      common_use: "Cinema, VFX"
+      aspect_ratio: "~1.90:1"
+
+    - name: "HD_1080"
+      resolution: [1920, 1080]
+      common_use: "Video, streaming"
+      aspect_ratio: "16:9"
+   
+    - name: "QHD_1440"
+      resolution: [2560, 1440]
+      common_use: "PC, gaming, YouTube"
+      aspect_ratio: "16:9"
+   
+    - name: "4K_DCP"
+      resolution: [4096, 2160]
+      common_use: "Cinema, HDR video"
+      aspect_ratio: "~1.90:1"
+   
+    - name: "UHD_4K"
+      resolution: [3840, 2160]
+      common_use: "TV, streaming"
+      aspect_ratio: "16:9"
