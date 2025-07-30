@@ -147,7 +147,8 @@ def generate_sequence_output_paths(seq, metadata):
 
     base_path = resolve_template("path", "shots:publish:base_path", tokens)
     version = get_next_version(base_path=base_path)
-    resolution = get_resolution_string(metadata.get('proxy_res', '2K_DCP'))
+    res_name = (metadata or {}).get('proxy_res') or '2K_DCP'
+    resolution = get_resolution_string(res_name=res_name, fallback="2K_DCP")
 
     output_paths = {}
     frame_counter = 1001
