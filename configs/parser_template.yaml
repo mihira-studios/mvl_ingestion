@@ -1,0 +1,77 @@
+template:
+  args:
+    - name: "--no-gui"
+      action: store_true
+      dest: gui
+      help: "Run application in GUI Mode."
+
+    - name: "--input"
+      type: str
+      default: ""
+      help: "The source directory to process."
+      required: true
+
+    - name: "--output"
+      type: str
+      default: "./"
+      help: "The output directory for processed data."
+
+    - name: "--project"
+      type: str
+      default: "gen63"
+      help: "The name of the project."
+
+    - name: "--input_date"
+      type: str
+      help: "Date in YYYYMMDD format."
+
+    - name: "--vendor"
+      type: str
+      default: ""
+      help: "Vendor name to look into vendor/date directory."
+    
+    - name: "--scene"
+      type: str
+      default: ""
+      help: "Scene name (e.g., SC_48). Used for path resolution and organizing shots."
+      required: false
+    
+    - name: "--shot"
+      type: str
+      default: ""
+      help: "Shot name (e.g., SH_14). Used for path resolution and organizing plates."
+      required: false
+
+    - name: "--resolution"
+      type: str
+      default: "4448x3096"
+      help: "Resolution (e.g., 4448x3096)."
+
+    - name: "--no-force"
+      action: store_false
+      dest: force
+      help: "Process on error."
+
+    - name: "--proxy"
+      action: "store"
+      dest: proxy
+      type: str
+      default: "jpeg"
+      help: "Specify proxy file format (e.g., jpeg, webp)."
+
+    - name: "--no-proxy"
+      action: "store_false"
+      dest: use_proxy
+      help: "Disable proxy creation."
+    
+    - name: "--no-mov"
+      action: store_false
+      dest: mov
+      help: "Generate MOV files from EXR."
+    
+    - name: "--csv_path"
+      type: str
+      default: "J:\\gen63\\vault\\to_mvl\\from_da\\20250330\\SC_48\\shot_folders_to_be_renamed.csv"
+      help: "csv file for scene and shot mapping ."
+
+  

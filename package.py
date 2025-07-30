@@ -10,7 +10,7 @@ requires = [
 private_build_requires = [
     "python-3",
     "mvl_core_pipeline",
-    "mvl_rez_package_builder"
+    "mvl_rez_package_builder",
 ]
 
 tools = [
