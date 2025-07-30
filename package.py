@@ -1,6 +1,6 @@
 name = "mvl_ingestion"
 
-version = "0.2.0"
+version = "0.2.1"
 
 requires = [
     "~python-3",

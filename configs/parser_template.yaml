@@ -63,6 +63,13 @@ template:
       action: "store_false"
       dest: use_proxy
       help: "Disable proxy creation."
+
+    - name: "--proxy_res"
+      type: str
+      default: "2K_DCP"
+      choices: ["2K_DCP", "HD_1080", "QHD_1440", "4K_DCP", "UHD_4K"]
+      help: "Resolution preset or WxH format for proxy files (e.g., '2K_DCP' or 'HD_1080')."
+
     
     - name: "--no-mov"
       action: store_false
