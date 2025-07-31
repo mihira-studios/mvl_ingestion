@@ -4,7 +4,6 @@ import re
 import logging
 import datetime
 import shutil
-import pandas as pd
 from enum import Enum, unique
 import subprocess
 import concurrent.futures

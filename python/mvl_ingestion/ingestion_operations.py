@@ -2,11 +2,7 @@ import os
 import shutil
 import subprocess
 from mvl_ingestion.ingestion_utils import logger
-# import logging
-# logging.basicConfig(
-#     level=logging.INFO,
-#     format='%(asctime)s %(levelname)s [%(filename)s:%(lineno)d] %(message)s'
-# )
+
 
 class FileOperation:
     """Base class for file operations."""
